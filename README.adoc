@@ -441,8 +441,8 @@ $ vagrant ssh
 $ cd /var/log/kafka
 ---------------------------------------------------------------------
 +
-.. Zookeeper . zookeeper.out
-.. Kafka Server . kafka-server.out
+.. for Zookeeper we have /var/log/kafka/zookeeper.out
+.. for Kafka Server we have /var/log/kafka/kafka-server.out
 . on “kafka-ubuntu-cluster-node-3” produce messages to “here” topic from the console;
 +
 [source, numbered]

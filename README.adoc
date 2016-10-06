@@ -526,7 +526,10 @@ set broker.id=3
 ---------------------------------------------------------------------
 $ sudo /etc/init.d/kafka-server start
 ---------------------------------------------------------------------
++
+
 == To delete a topic
++ 
 [source, numbered]
 ---------------------------------------------------------------------
 /var/log/kafka$ /usr/bin/kafka-topics --zookeeper 192.168.33.21:2181,192.168.33.22:2181,192.168.33.23:2181 --delete --topic here
@@ -540,6 +543,7 @@ here . marked for deletion
 test
 there . marked for deletion
 ---------------------------------------------------------------------
++
 
 == If you see topic is “marked for deletion”, add this to /etc/kafka/server.properties
 allow for log deletion +

@@ -268,7 +268,6 @@ two
 $ /usr/bin/kafka-console-consumer --zookeeper 192.168.33.21:2181 --topic here —from-beginning
 ---------------------------------------------------------------------
 + +
-.
 == Let’s Setup the Zookeeper Cluster
 . Since we now have 3 nodes, we can setup a 3-node Zookeeper cluster
 . on “kafka-ubuntu-cluster-node-1”

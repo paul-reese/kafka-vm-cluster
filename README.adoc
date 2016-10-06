@@ -135,6 +135,7 @@ $ sudo vi /etc/kafka/server.properties
 ---------------------------------------------------------------------
 +
 . set these Kafka settings
++
 [source, numbered]
 ---------------------------------------------------------------------
 broker.id=2

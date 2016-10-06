@@ -12,8 +12,14 @@ $ vagrant init kafka-ubuntu-cluster-node-1 ~/boxes/debian-kafka-cluster.box
 .. set memory to 2048
 .. set the private IP address; you can use 192.168.33.21
 . start up the new box and log in;
-.. `vagrant up`
-.. `vagrant ssh`
++
+[source, numbered]
+---------------------------------------------------------------------
+$ vagrant up
+
+$ vagrant ssh
+---------------------------------------------------------------------
++
 . Kafka server settings should be set. You can verify the settings;
 .. `sudo vi /etc/kafka/server.properties`
 +

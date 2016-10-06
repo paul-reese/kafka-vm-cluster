@@ -1,6 +1,6 @@
 == Build a Single Kafka Node VM
-. Create directory for new cluster “ kafka-ubuntu-cluster-node-1”
-. Change directory to “kafka-ubuntu-cluster-node-1"
+. create directory for new cluster “ kafka-ubuntu-cluster-node-1”
+. change directory to “kafka-ubuntu-cluster-node-1"
 . let's spin up the vagrant box 'debian-kafka-cluster.box'
 +
 [source, numbered]
@@ -37,15 +37,15 @@ host.name=192.168.33.21
 advertised.host.name=192.168.33.21
 ---------------------------------------------------------------------
 +
-.  save and exit file
-. Zookeeper settings should be set. You can verify the settings;
+. save and exit file
+. zookeeper settings should be set. You can verify the settings;
 +
 [source, numbered]
 ---------------------------------------------------------------------
 $ sudo vi /etc/kafka/zookeeper.properties
 ---------------------------------------------------------------------
 +
-.  Leave these as is (unless you are using another host IP address), we will update later once we have three nodes running. For quorum we need odd number of Zookeeper nodes;
+.  leave these as is (unless you are using another host IP address), we will update later once we have three nodes running. For quorum we need odd number of Zookeeper nodes;
 +
 [source, numbered]
 ---------------------------------------------------------------------
@@ -54,15 +54,15 @@ server.1=192.168.33.21:2888:3888
 #server.1=192.168.33.23:2888:3888
 ---------------------------------------------------------------------
 +
-.  save and exit file
-. Add a myid file to store the Kafka broker id (as set above);
+. save and exit file
+. add a myid file to store the Kafka broker id (as set above);
 +
 [source, numbered]
 ---------------------------------------------------------------------
 $ echo “1” > /var/lib/zookeeper/myid
 ---------------------------------------------------------------------
 +
-. Restart Zookeeper server
+. restart Zookeeper server
 +
 [source, numbered]
 ---------------------------------------------------------------------
@@ -70,7 +70,7 @@ $ sudo /etc/init.d/zookeeper stop
 $ sudo /etc/init.d/zookeeper start
 ---------------------------------------------------------------------
 +
-. Restart Kafka server
+. restart Kafka server
 +
 [source, numbered]
 ---------------------------------------------------------------------
@@ -78,14 +78,14 @@ $ sudo /etc/init.d/kafka-server stop
 $ sudo /etc/init.d/kafka-server start
 ---------------------------------------------------------------------
 +
-. Create a new topic “here”
+. create a new topic “here”
 +
 [source, numbered]
 ---------------------------------------------------------------------
 $ /usr/bin/kafka-topics --create --zookeeper 192.168.33.21:2181 --partition 1 --replication-factor 1 --topic there
 ---------------------------------------------------------------------
 +
-. Produce messages to “here” topic from the console;
+. produce messages to “here” topic from the console;
 +
 [source, numbered]
 ---------------------------------------------------------------------
@@ -101,18 +101,18 @@ node
 one
 ---------------------------------------------------------------------
 +
-. Consume messages from “here” topic;
+. consume messages from “here” topic;
 +
 [source, numbered]
 ---------------------------------------------------------------------
 $ /usr/bin/kafka-console-consumer --zookeeper 192.168.33.21:2181 --topic here
 ---------------------------------------------------------------------
 +
-. We’ve now successfully built out a single Zookeeper node and a single Kafka broker
+. we’ve now successfully built out a single Zookeeper node and a single Kafka broker
 
 == Add Kafka Broker Node 2
-. Create directory for new cluster “kafka-ubuntu-cluster-node-2”
-. Change directory to “kafka-ubuntu-cluster-node-2"
+. create directory for new cluster “kafka-ubuntu-cluster-node-2”
+. change directory to “kafka-ubuntu-cluster-node-2"
 . vagrant init kafka-ubuntu-cluster-node-2 ~/boxes/debian-kafka-cluster.box
 . edit the Vagrantfile;
 .. set memory to 2048
@@ -145,7 +145,7 @@ advertised.host.name=192.168.33.22
 +
 . save and exit file
 
-. Add a myid file to store the Kafka broker id (as set above);
+. add a myid file to store the Kafka broker id (as set above);
 +
 [source, numbered]
 ---------------------------------------------------------------------

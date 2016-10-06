@@ -271,7 +271,7 @@ $ /usr/bin/kafka-console-consumer --zookeeper 192.168.33.21:2181 --topic here �
 .
 
 == Let’s Setup the Zookeeper Cluster
-. Since we now have 3 nodes, we can setup a 3-node Zookeeper cluster
+. since we now have 3 nodes, we can setup a 3-node Zookeeper cluster
 . on “kafka-ubuntu-cluster-node-1”
 .. Edit Kafka Server property file, we will update zookeeper.connect property on each node
 +
@@ -280,9 +280,13 @@ $ /usr/bin/kafka-console-consumer --zookeeper 192.168.33.21:2181 --topic here �
 $ sudo vi /etc/kafka/server.properties
 ---------------------------------------------------------------------
 +
-
+.. edit the Kafka connect property (to Zookeeper) as follows 
++
+[source, numbered]
+---------------------------------------------------------------------
 zookeeper.connect=192.168.33.21:2181,192.168.33.22:2181,192.168.33.23:2181
-
+---------------------------------------------------------------------
++
 .. save and exit file
 .. Edit Zookeeper’s property file, we will add server.x=ipaddress:port:port for each extra node in the cluster
 +
@@ -301,7 +305,7 @@ server.2=192.168.33.22:2888:3888
 server.3=192.168.33.23:2888:3888
 ---------------------------------------------------------------------
 +
-... add initLimit (Amount of time, in ticks (see tickTime), to allow followers to connect and sync to a leader. Increased this value as needed, if the amount of data managed by ZooKeeper is large.) and syncLimit (Amount of time, in ticks (see tickTime), to allow followers to sync with ZooKeeper. If followers fall too far behind a leader, they will be dropped.)
+.. add initLimit (Amount of time, in ticks (see tickTime), to allow followers to connect and sync to a leader. Increased this value as needed, if the amount of data managed by ZooKeeper is large.) and syncLimit (Amount of time, in ticks (see tickTime), to allow followers to sync with ZooKeeper. If followers fall too far behind a leader, they will be dropped.)
 +
 [source, numbered]
 ---------------------------------------------------------------------

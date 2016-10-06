@@ -487,7 +487,8 @@ $ /usr/bin/kafka-topics --create --zookeeper 192.168.33.21:2181,192.168.33.22:21
 ---------------------------------------------------------------------
 $ /usr/bin/kafka-topics --describe --zookeeper 192.168.33.21:2181,192.168.33.22:2181,192.168.33.23:2181 --topic here
 ---------------------------------------------------------------------
-+ some text here +
++
+[%hardbreaks]
 == FAQ
 === Configured broker.id 3 doesn't match stored broker.id 1 in meta.properties
 +

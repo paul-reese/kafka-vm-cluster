@@ -512,7 +512,6 @@ restart kafka server
 
 [discrete]
 === To delete a topic
-+
 [source, numbered]
 ---------------------------------------------------------------------
 /var/log/kafka$ /usr/bin/kafka-topics --zookeeper 192.168.33.21:2181,192.168.33.22:2181,192.168.33.23:2181 --delete --topic here
@@ -526,16 +525,27 @@ here . marked for deletion
 test
 there . marked for deletion
 ---------------------------------------------------------------------
-+
 
 [discrete]
 === If you see topic is “marked for deletion”, add this to /etc/kafka/server.properties
-# allow for log deletion
+allow for log deletion
+. add this line to server.properties
+[source, numbered]
+---------------------------------------------------------------------
 delete.topic.enable=true
+---------------------------------------------------------------------
+. now bounce kafka-server and zookeeper on each node
+[source, numbered]
+---------------------------------------------------------------------
+$ sudo /etc/init.d/kafka-server stop
 
-`stop kafka-server and zookeeper on each node`
-`start zookeeper and kafka-server on each node`
-+
+$ sudo /etc/init.d/zookeeper stop
+
+$ sudo /etc/init.d/kafka-server start
+
+$ sudo /etc/init.d/zookeeper start
+---------------------------------------------------------------------
+. now let's list the topic to confirm deletion
 [source, numbered]
 ---------------------------------------------------------------------
 vagrant@vagrant-ubuntu-trusty-64:/var/log/kafka$ /usr/bin/kafka-topics --zookeeper 192.168.33.21:2181,192.168.33.22:2181,192.168.33.23:2181 --list
@@ -545,12 +555,10 @@ _schemas
 greet
 test
 ---------------------------------------------------------------------
-+
 
 [discrete]
 === Error on kafka-console-consumer
 If this error is encountered, verify that zookeeper is indeed running on the nodes;
-+
 [source, numbered]
 ---------------------------------------------------------------------
 vagrant@vagrant-ubuntu-trusty-64:/var/log/kafka$ /usr/bin/kafka-console-consumer --zookeeper 192.168.33.21:2181,192.168.33.22:2181,192.168.33.23:2181 --topic here --from-beginning
@@ -572,6 +580,5 @@ hi from node 2 targeting 22
 hi from node 2 targeting 22
 hi from node 2 targeting 23
 ---------------------------------------------------------------------
-+
 
 All the above adapted from https://objectpartners.com/2014/05/06/setting-up-your-own-apache-kafka-cluster-with-vagrant-step-by-step/

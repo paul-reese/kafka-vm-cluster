@@ -197,11 +197,14 @@ two
 ---------------------------------------------------------------------
 $ vagrant up
 $ vagrant ssh
-. Set Kafka server settings;
+. edit Kafka server.properties
 +
 [source, numbered]
 ---------------------------------------------------------------------
-$ sudo vi /etc/kafka/server.properties; modify the file accordingly
+$ sudo vi /etc/kafka/server.properties
+---------------------------------------------------------------------
++
+. modify the file accordingly
 +
 [source, numbered]
 ---------------------------------------------------------------------

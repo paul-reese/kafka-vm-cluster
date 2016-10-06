@@ -1,7 +1,6 @@
 = A Kafka Broker Cluster on Multiple VMs
-.
-Some text needs to be here, I guess but this is bunk
-.
+Some text needs to be here, I guess but this is bunk +
+. +
 == Build a Single Kafka Node VM
 . create directory for new cluster “ kafka-ubuntu-cluster-node-1”
 . change directory to “kafka-ubuntu-cluster-node-1"

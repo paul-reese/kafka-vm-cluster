@@ -488,7 +488,6 @@ $ /usr/bin/kafka-topics --create --zookeeper 192.168.33.21:2181,192.168.33.22:21
 ---------------------------------------------------------------------
 $ /usr/bin/kafka-topics --describe --zookeeper 192.168.33.21:2181,192.168.33.22:2181,192.168.33.23:2181 --topic here
 ---------------------------------------------------------------------
-+
 [discrete]
 = FAQ
 [discrete]
@@ -502,23 +501,17 @@ kafka.common.InconsistentBrokerIdException: Configured broker.id 3 doesn't match
         at io.confluent.support.metrics.SupportedServerStartable.startup(SupportedServerStartable.java:100)
         at io.confluent.support.metrics.SupportedKafka.main(SupportedKafka.java:49)
 ---------------------------------------------------------------------
-+
 . update kafka meta.properties
-+
 [source, numbered]
 ---------------------------------------------------------------------
 $ sudo vi /var/lib/kafka/meta.properties
 ---------------------------------------------------------------------
-+
 . set the broker's id correctly 
-+
 [source, numbered]
 ---------------------------------------------------------------------
 set broker.id=3
 ---------------------------------------------------------------------
-+
 . restart kafka server
-+
 [source, numbered]
 ---------------------------------------------------------------------
 $ sudo /etc/init.d/kafka-server start

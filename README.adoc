@@ -21,7 +21,12 @@ $ vagrant ssh
 ---------------------------------------------------------------------
 +
 . Kafka server settings should be set. You can verify the settings;
-.. `sudo vi /etc/kafka/server.properties`
++
+[source, numbered]
+---------------------------------------------------------------------
+sudo vi /etc/kafka/server.properties
+---------------------------------------------------------------------
++
 +
 [source, numbered]
 ---------------------------------------------------------------------
@@ -68,8 +73,10 @@ sudo /etc/init.d/zookeeper start
 +
 [source, numbered]
 ---------------------------------------------------------------------
-.. `sudo /etc/init.d/kafka-server stop`
-.. `sudo /etc/init.d/kafka-server start`
+sudo /etc/init.d/kafka-server stop
+sudo /etc/init.d/kafka-server start
+---------------------------------------------------------------------
++
 . Create a new topic “here”
 +
 [source, numbered]

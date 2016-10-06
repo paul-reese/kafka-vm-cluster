@@ -506,11 +506,27 @@ kafka.common.InconsistentBrokerIdException: Configured broker.id 3 doesn't match
         at io.confluent.support.metrics.SupportedKafka.main(SupportedKafka.java:49)
 ---------------------------------------------------------------------
 +
-update sudo vi /var/lib/kafka/meta.properties
-     set broker.id=3
-restart kafka server
-     sudo /etc/init.d/kafka-server start
-
+. update kafka meta.properties
++
+[source, numbered]
+---------------------------------------------------------------------
+$ sudo vi /var/lib/kafka/meta.properties
+---------------------------------------------------------------------
++
+. set the broker's id correctly 
++
+[source, numbered]
+---------------------------------------------------------------------
+set broker.id=3
+---------------------------------------------------------------------
++
+. restart kafka server
++
+[source, numbered]
+---------------------------------------------------------------------
+$ sudo /etc/init.d/kafka-server start
+---------------------------------------------------------------------
++
 == To delete a topic
 [source, numbered]
 ---------------------------------------------------------------------

@@ -490,7 +490,6 @@ $ /usr/bin/kafka-topics --create --zookeeper 192.168.33.21:2181,192.168.33.22:21
 $ /usr/bin/kafka-topics --describe --zookeeper 192.168.33.21:2181,192.168.33.22:2181,192.168.33.23:2181 --topic here
 ---------------------------------------------------------------------
 +
-. +
 [discrete]
 = FAQ
 [discrete]
@@ -511,7 +510,6 @@ update sudo vi /var/lib/kafka/meta.properties
 restart kafka server
      sudo /etc/init.d/kafka-server start
 
-[discrete]
 == To delete a topic
 [source, numbered]
 ---------------------------------------------------------------------
@@ -527,7 +525,6 @@ test
 there . marked for deletion
 ---------------------------------------------------------------------
 
-[discrete]
 == If you see topic is “marked for deletion”, add this to /etc/kafka/server.properties
 allow for log deletion
 . add this line to server.properties
@@ -557,7 +554,6 @@ greet
 test
 ---------------------------------------------------------------------
 
-[discrete]
 == Error on kafka-console-consumer
 If this error is encountered, verify that zookeeper is indeed running on the nodes;
 [source, numbered]

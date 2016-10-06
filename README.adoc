@@ -315,7 +315,7 @@ syncLimit=2
 +
 .. save and exit file
 . on “kafka-ubuntu-cluster-node-2”
-.. Edit Kafka Server property file, we will update zookeeper.connect property on each node
+.. edit Kafka Server property file, we will update zookeeper.connect property on each node
 +
 [source, numbered]
 ---------------------------------------------------------------------
@@ -348,10 +348,26 @@ server.3=192.168.33.23:2888:3888
 ... save and exit file
 . on “kafka-ubuntu-cluster-node-3”
 ..  Edit Kafka Server property file, we will update zookeeper.connect property on each node
-... `sudo vi /etc/kafka/server.properties`
-... zookeeper.connect=192.168.33.21:2181,192.168.33.22:2181,192.168.33.23:2181
-.. Edit Zookeeper’s property file, we will add server.x=ipaddress:port:port for each extra node in the cluster
-... `sudo vi /etc/kafka/zookeeper.properties`
++
+[source, numbered]
+---------------------------------------------------------------------
+$ sudo vi /etc/kafka/server.properties
+---------------------------------------------------------------------
++
+.. edit the Kafka connect property (to Zookeeper) as follows
++
+[source, numbered]
+---------------------------------------------------------------------
+zookeeper.connect=192.168.33.21:2181,192.168.33.22:2181,192.168.33.23:2181
+---------------------------------------------------------------------
++
+.. edit Zookeeper’s property file, we will add server.x=ipaddress:port:port for each extra node in the cluster
++
+[source, numbered]
+---------------------------------------------------------------------
+$ sudo vi /etc/kafka/zookeeper.properties
+---------------------------------------------------------------------
++
 ... uncomment lines
 ... server.2 and server.3, should now look like this;
 +
@@ -365,30 +381,75 @@ server.3=192.168.33.23:2888:3888
 ... save and exit file
 . Let’s halt each VM one at a time
 .. on “kafka-ubuntu-cluster-node-1”
-... `exit`
-... `vagrant halt`
++
+[source, numbered]
+---------------------------------------------------------------------
+$ exit
+
+$ vagrant halt
+---------------------------------------------------------------------
++
 .. on “kafka-ubuntu-cluster-node-2”
-... `exit`
-... `vagrant halt`
++
+[source, numbered]
+---------------------------------------------------------------------
+$ exit
+
+$ vagrant halt
+---------------------------------------------------------------------
++
 .. on “kafka-ubuntu-cluster-node-2”
-... `exit`
-... `vagrant halt`
++
+[source, numbered]
+---------------------------------------------------------------------
+$ exit
+
+$ vagrant halt
+---------------------------------------------------------------------
++
 . Let’s start each VM one at a time
 .. on “kafka-ubuntu-cluster-node-1”
-... `vagrant up`
-... `vagrant ssh`
++
+[source, numbered]
+---------------------------------------------------------------------
+$ vagrant up
+
+$ vagrant ssh
+---------------------------------------------------------------------
++
 .. on “kafka-ubuntu-cluster-node-2”
-... `vagrant up`
-... `vagrant ssh`
++
+[source, numbered]
+---------------------------------------------------------------------
+$ vagrant up
+
+$ vagrant ssh
+---------------------------------------------------------------------
++
 .. on “kafka-ubuntu-cluster-node-2”
-... `vagrant up`
-... `vagrant ssh`
++
+[source, numbered]
+---------------------------------------------------------------------
+$ vagrant up
+$ vagrant ssh
+---------------------------------------------------------------------
++
 . Zookeeper and Kafka servers will start via /etc/init.d scripts and in order. You can validate startup is successful by checking logs;
-.. `cd /var/log/kafka`
++
+[source, numbered]
+---------------------------------------------------------------------
+$ cd /var/log/kafka
+---------------------------------------------------------------------
++
 .. Zookeeper . zookeeper.out
 .. Kafka Server . kafka-server.out
-. On “kafka-ubuntu-cluster-node-3” produce messages to “here” topic from the console;
-.. `/usr/bin/kafka-console-producer --broker-list 192.168.33.21:9092,192.168.33.22:9092 --topic here`
+. on “kafka-ubuntu-cluster-node-3” produce messages to “here” topic from the console;
++
+[source, numbered]
+---------------------------------------------------------------------
+/usr/bin/kafka-console-producer --broker-list 192.168.33.21:9092,192.168.33.22:9092 --topic here
+---------------------------------------------------------------------
++
 .. enter some text in console;
 +
 [source, numbered]
@@ -399,16 +460,40 @@ two
 ---------------------------------------------------------------------
 +
 . On “kafka-ubuntu-cluster-node-1” consume messages from “here” topic;
-.. `/usr/bin/kafka-console-consumer --zookeeper 192.168.33.21:2181 --topic here —from-beginning`
++
+[source, numbered]
+---------------------------------------------------------------------
+/usr/bin/kafka-console-consumer --zookeeper 192.168.33.21:2181 --topic here —from-beginning
+---------------------------------------------------------------------
++
 . Let’s test again with the kafka-console-producer, this time using the third node as the broker
-.. `/usr/bin/kafka-console-producer --broker-list 192.168.33.21:9092 --topic here`
++
+[source, numbered]
+---------------------------------------------------------------------
+/usr/bin/kafka-console-producer --broker-list 192.168.33.21:9092 --topic here
+---------------------------------------------------------------------
++
 . Let’s delete topic “here”, we now have 3 replicas
-.. `/usr/bin/kafka-topics --zookeeper 192.168.33.21:2181,192.168.33.22:2181,192.168.33.23:2181 --delete --topic here`
++
+[source, numbered]
+---------------------------------------------------------------------
+/usr/bin/kafka-topics --zookeeper 192.168.33.21:2181,192.168.33.22:2181,192.168.33.23:2181 --delete --topic here
+---------------------------------------------------------------------
++
 . Let’s create topic “here” again
-.. `/usr/bin/kafka-topics --create --zookeeper 192.168.33.21:2181,192.168.33.22:2181,192.168.33.23:2181 --partition 1 --replication-factor 3 --topic here`
++
+[source, numbered]
+---------------------------------------------------------------------
+/usr/bin/kafka-topics --create --zookeeper 192.168.33.21:2181,192.168.33.22:2181,192.168.33.23:2181 --partition 1 --replication-factor 3 --topic here
+---------------------------------------------------------------------
++
 . Let’s describe the create topic “here”; note that we can see that the replicas have changed and a leader was elected
-.. `/usr/bin/kafka-topics --describe --zookeeper 192.168.33.21:2181,192.168.33.22:2181,192.168.33.23:2181 --topic here`
-
++
+[source, numbered]
+---------------------------------------------------------------------
+/usr/bin/kafka-topics --describe --zookeeper 192.168.33.21:2181,192.168.33.22:2181,192.168.33.23:2181 --topic here
+---------------------------------------------------------------------
++
 == FAQ
 === Configured broker.id 3 doesn't match stored broker.id 1 in meta.properties
 +

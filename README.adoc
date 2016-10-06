@@ -37,7 +37,7 @@ host.name=192.168.33.21
 advertised.host.name=192.168.33.21
 ---------------------------------------------------------------------
 +
-..  save and exit file
+.  save and exit file
 . Zookeeper settings should be set. You can verify the settings;
 +
 [source, numbered]
@@ -45,7 +45,7 @@ advertised.host.name=192.168.33.21
 sudo vi /etc/kafka/zookeeper.properties
 ---------------------------------------------------------------------
 +
-..  Leave these as is (unless you are using another host IP address), we will update later once we have three nodes running. For quorum we need odd number of Zookeeper nodes;
+.  Leave these as is (unless you are using another host IP address), we will update later once we have three nodes running. For quorum we need odd number of Zookeeper nodes;
 +
 [source, numbered]
 ---------------------------------------------------------------------
@@ -54,7 +54,7 @@ server.1=192.168.33.21:2888:3888
 #server.1=192.168.33.23:2888:3888
 ---------------------------------------------------------------------
 +
-..  save and exit file
+.  save and exit file
 . Add a myid file to store the Kafka broker id (as set above);
 +
 [source, numbered]

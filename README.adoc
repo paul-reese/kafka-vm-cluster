@@ -240,15 +240,16 @@ $ echo 3 > /var/lib/zookeeper/myid
 [source, numbered]
 ---------------------------------------------------------------------
 $ sudo /etc/init.d/kafka-server stop
+
+$ sudo /etc/init.d/kafka-server start
 ---------------------------------------------------------------------
 +
 
-$ sudo /etc/init.d/kafka-server start
 . on “kafka-ubuntu-cluster-node-3” produce messages to “here” topic from the console;
 +
 [source, numbered]
 ---------------------------------------------------------------------
-/usr/bin/kafka-console-producer --broker-list 192.168.33.21:9092,192.168.33.22:9092 --topic here
+$ /usr/bin/kafka-console-producer --broker-list 192.168.33.21:9092,192.168.33.22:9092 --topic here
 ---------------------------------------------------------------------
 +
 .. enter some text in console;
@@ -267,7 +268,7 @@ two
 $ /usr/bin/kafka-console-consumer --zookeeper 192.168.33.21:2181 --topic here —from-beginning
 ---------------------------------------------------------------------
 +
-
+.
 == Let’s Setup the Zookeeper Cluster
 . Since we now have 3 nodes, we can setup a 3-node Zookeeper cluster
 . on “kafka-ubuntu-cluster-node-1”

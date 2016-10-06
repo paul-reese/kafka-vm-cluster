@@ -134,7 +134,6 @@ $ vagrant ssh
 $ sudo vi /etc/kafka/server.properties
 ---------------------------------------------------------------------
 +
-+
 [source, numbered]
 ---------------------------------------------------------------------
 broker.id=2
@@ -186,17 +185,23 @@ two
 +
 
 == Add Kafka Broker Node 3
-. Create directory for new cluster “kafka-ubuntu-cluster-node-3”
-. Change directory to “kafka-ubuntu-cluster-node-3"
+. create directory for new cluster “kafka-ubuntu-cluster-node-3”
+. change directory to “kafka-ubuntu-cluster-node-3"
 . vagrant init kafka-ubuntu-cluster-node-3 ~/boxes/debian-kafka-cluster.box
 . edit the Vagrantfile;
 .. set memory to 2048
 .. set the private IP address; you can use 192.168.33.23
 . start up the new box and log in;
-.. `vagrant up`
-.. `vagrant ssh`
++
+[source, numbered]
+---------------------------------------------------------------------
+$ vagrant up
+$ vagrant ssh
 . Set Kafka server settings;
-.. `sudo vi /etc/kafka/server.properties; modify the file accordingly`
++
+[source, numbered]
+---------------------------------------------------------------------
+$ sudo vi /etc/kafka/server.properties; modify the file accordingly
 +
 [source, numbered]
 ---------------------------------------------------------------------
@@ -208,12 +213,28 @@ advertised.host.name=192.168.33.23
 +
 .. save and exit file
 . Add a myid file to store the Kafka broker id (as set above);
-.. `echo “3” > /var/lib/zookeeper/myid`
++
+[source, numbered]
+---------------------------------------------------------------------
+$ echo “3” > /var/lib/zookeeper/myid
+---------------------------------------------------------------------
++
 . Restart Kafka server
-.. `sudo /etc/init.d/kafka-server stop`
-.. `sudo /etc/init.d/kafka-server start`
++
+[source, numbered]
+---------------------------------------------------------------------
+$ sudo /etc/init.d/kafka-server stop
+---------------------------------------------------------------------
++
+
+$ sudo /etc/init.d/kafka-server start
 . On “kafka-ubuntu-cluster-node-3” produce messages to “here” topic from the console;
-.. `/usr/bin/kafka-console-producer --broker-list 192.168.33.21:9092,192.168.33.22:9092 --topic here`
++
+[source, numbered]
+---------------------------------------------------------------------
+/usr/bin/kafka-console-producer --broker-list 192.168.33.21:9092,192.168.33.22:9092 --topic here
+---------------------------------------------------------------------
++
 .. enter some text in console;
 +
 [source, numbered]
@@ -224,19 +245,36 @@ two
 ---------------------------------------------------------------------
 +
 . On “kafka-ubuntu-cluster-node-1” consume messages from “here” topic;
-.. `/usr/bin/kafka-console-consumer --zookeeper 192.168.33.21:2181 --topic here —from-beginning`
++
+[source, numbered]
+---------------------------------------------------------------------
+$ /usr/bin/kafka-console-consumer --zookeeper 192.168.33.21:2181 --topic here —from-beginning
+---------------------------------------------------------------------
++
 
 == Let’s Setup the Zookeeper Cluster
 . Since we now have 3 nodes, we can setup a 3-node Zookeeper cluster
 . on “kafka-ubuntu-cluster-node-1”
 .. Edit Kafka Server property file, we will update zookeeper.connect property on each node
-... `sudo vi /etc/kafka/server.properties`
-... zookeeper.connect=192.168.33.21:2181,192.168.33.22:2181,192.168.33.23:2181
-... save and exit file
++
+[source, numbered]
+---------------------------------------------------------------------
+$ sudo vi /etc/kafka/server.properties
+---------------------------------------------------------------------
++
+
+zookeeper.connect=192.168.33.21:2181,192.168.33.22:2181,192.168.33.23:2181
+
+.. save and exit file
 .. Edit Zookeeper’s property file, we will add server.x=ipaddress:port:port for each extra node in the cluster
-... `sudo vi /etc/kafka/zookeeper.properties`
-... uncomment lines
-... server.2 and server.3, should now look like this;
++
+[source, numbered]
+---------------------------------------------------------------------
+$ sudo vi /etc/kafka/zookeeper.properties
+---------------------------------------------------------------------
++
+.. uncomment lines
+.. server.2 and server.3, should now look like this;
 +
 [source, numbered]
 ---------------------------------------------------------------------
@@ -256,12 +294,22 @@ syncLimit=2
 .. save and exit file
 . on “kafka-ubuntu-cluster-node-2”
 .. Edit Kafka Server property file, we will update zookeeper.connect property on each node
-... `sudo vi /etc/kafka/server.properties`
-... zookeeper.connect=192.168.33.21:2181,192.168.33.22:2181,192.168.33.23:2181
++
+[source, numbered]
+---------------------------------------------------------------------
+sudo vi /etc/kafka/server.properties`
+
+zookeeper.connect=192.168.33.21:2181,192.168.33.22:2181,192.168.33.23:2181
+---------------------------------------------------------------------
++
 .. Edit Zookeeper’s property file, we will add server.x=ipaddress:port:port for each extra node in the cluster
-... `sudo vi /etc/kafka/zookeeper.properties`
-... uncomment lines
-... server.2 and server.3, should now look like this;
++
+[source, numbered]
+---------------------------------------------------------------------
+$ sudo vi /etc/kafka/zookeeper.properties
+---------------------------------------------------------------------
++
+.. uncomment lines "server.2" and "server.3", should now look like this;
 +
 [source, numbered]
 ---------------------------------------------------------------------

@@ -2,7 +2,12 @@
 . Create directory for new cluster “ kafka-ubuntu-cluster-node-1”
 . Change directory to “kafka-ubuntu-cluster-node-1"
 . let's spin up the vagrant box 'debian-kafka-cluster.box'
-`vagrant init kafka-ubuntu-cluster-node-1 ~/boxes/debian-kafka-cluster.box`
++
+[source, numbered]
+---------------------------------------------------------------------
+$ vagrant init kafka-ubuntu-cluster-node-1 ~/boxes/debian-kafka-cluster.box
+---------------------------------------------------------------------
++
 . edit the Vagrantfile;
 .. set memory to 2048
 .. set the private IP address; you can use 192.168.33.21

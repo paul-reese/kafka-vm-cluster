@@ -533,7 +533,7 @@ there . marked for deletion
 ---------------------------------------------------------------------
 
 == If you see topic is “marked for deletion”, add this to /etc/kafka/server.properties
-allow for log deletion +
+allow for log deletion
 . add this line to server.properties
 [source, numbered]
 ---------------------------------------------------------------------

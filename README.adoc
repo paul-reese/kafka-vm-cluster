@@ -153,7 +153,7 @@ advertised.host.name=192.168.33.22
 $ echo “2” > /var/lib/zookeeper/myid
 ---------------------------------------------------------------------
 +
-. Restart Kafka server
+. restart Kafka server
 +
 [source, numbered]
 ---------------------------------------------------------------------
@@ -182,14 +182,20 @@ two
 +
 [source, numbered]
 ---------------------------------------------------------------------
-/usr/bin/kafka-console-consumer --zookeeper 192.168.33.21:2181 --topic here
+$ /usr/bin/kafka-console-consumer --zookeeper 192.168.33.21:2181 --topic here
 ---------------------------------------------------------------------
 +
 
 == Add Kafka Broker Node 3
 . create directory for new cluster “kafka-ubuntu-cluster-node-3”
 . change directory to “kafka-ubuntu-cluster-node-3"
-. vagrant init kafka-ubuntu-cluster-node-3 ~/boxes/debian-kafka-cluster.box
+. let's init the vagrant box from the *_debian-kakfa-cluster.box_* we created earlier
++
+[source, numbered]
+---------------------------------------------------------------------
+$ vagrant init kafka-ubuntu-cluster-node-3 ~/boxes/debian-kafka-cluster.box
+---------------------------------------------------------------------
++
 . edit the Vagrantfile;
 .. set memory to 2048
 .. set the private IP address; you can use 192.168.33.23
@@ -198,7 +204,10 @@ two
 [source, numbered]
 ---------------------------------------------------------------------
 $ vagrant up
+
 $ vagrant ssh
+---------------------------------------------------------------------
++
 . edit Kafka server.properties
 +
 [source, numbered]

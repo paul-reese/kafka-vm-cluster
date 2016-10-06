@@ -184,7 +184,7 @@ two
 ---------------------------------------------------------------------
 $ /usr/bin/kafka-console-consumer --zookeeper 192.168.33.21:2181 --topic here
 ---------------------------------------------------------------------
-+
++ +
 
 == Add Kafka Broker Node 3
 . create directory for new cluster “kafka-ubuntu-cluster-node-3”
@@ -199,6 +199,7 @@ $ vagrant init kafka-ubuntu-cluster-node-3 ~/boxes/debian-kafka-cluster.box
 . edit the Vagrantfile;
 .. set memory to 2048
 .. set the private IP address; you can use 192.168.33.23
+. save and exit
 . start up the new box and log in;
 +
 [source, numbered]

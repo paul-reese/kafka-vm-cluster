@@ -27,6 +27,7 @@ $ vagrant ssh
 sudo vi /etc/kafka/server.properties
 ---------------------------------------------------------------------
 +
+. add these properties to the server.properties
 +
 [source, numbered]
 ---------------------------------------------------------------------

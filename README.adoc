@@ -484,17 +484,14 @@ $ /usr/bin/kafka-topics --create --zookeeper 192.168.33.21:2181,192.168.33.22:21
 ---------------------------------------------------------------------
 +
 . let’s describe the create topic “here”; note that we can see that the replicas have changed and a leader was elected
-+
 [source, numbered]
 ---------------------------------------------------------------------
 $ /usr/bin/kafka-topics --describe --zookeeper 192.168.33.21:2181,192.168.33.22:2181,192.168.33.23:2181 --topic here
 ---------------------------------------------------------------------
-+
 [discrete]
 = FAQ
 [discrete]
 == Configured broker.id 3 doesn't match stored broker.id 1 in meta.properties
-+
 [source, numbered]
 ---------------------------------------------------------------------
 [2016-10-05 15:48:05,841] FATAL Fatal error during KafkaServer startup. Prepare to shutdown (kafka.server.KafkaServer)
@@ -527,7 +524,6 @@ $ sudo /etc/init.d/kafka-server start
 ---------------------------------------------------------------------
 
 == To delete a topic
-+ 
 [source, numbered]
 ---------------------------------------------------------------------
 /var/log/kafka$ /usr/bin/kafka-topics --zookeeper 192.168.33.21:2181,192.168.33.22:2181,192.168.33.23:2181 --delete --topic here

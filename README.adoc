@@ -59,7 +59,7 @@ server.1=192.168.33.21:2888:3888
 +
 [source, numbered]
 ---------------------------------------------------------------------
-$ echo “1” > /var/lib/zookeeper/myid
+$ echo 1 > /var/lib/zookeeper/myid
 ---------------------------------------------------------------------
 +
 . restart Zookeeper server
@@ -150,7 +150,7 @@ advertised.host.name=192.168.33.22
 +
 [source, numbered]
 ---------------------------------------------------------------------
-$ echo “2” > /var/lib/zookeeper/myid
+$ echo 2 > /var/lib/zookeeper/myid
 ---------------------------------------------------------------------
 +
 . restart Kafka server
@@ -232,7 +232,7 @@ advertised.host.name=192.168.33.23
 +
 [source, numbered]
 ---------------------------------------------------------------------
-$ echo “3” > /var/lib/zookeeper/myid
+$ echo 3 > /var/lib/zookeeper/myid
 ---------------------------------------------------------------------
 +
 . restart Kafka server

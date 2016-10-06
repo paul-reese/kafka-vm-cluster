@@ -447,7 +447,7 @@ $ cd /var/log/kafka
 +
 [source, numbered]
 ---------------------------------------------------------------------
-/usr/bin/kafka-console-producer --broker-list 192.168.33.21:9092,192.168.33.22:9092 --topic here
+$ /usr/bin/kafka-console-producer --broker-list 192.168.33.21:9092,192.168.33.22:9092 --topic here
 ---------------------------------------------------------------------
 +
 .. enter some text in console;
@@ -463,35 +463,35 @@ two
 +
 [source, numbered]
 ---------------------------------------------------------------------
-/usr/bin/kafka-console-consumer --zookeeper 192.168.33.21:2181 --topic here —from-beginning
+$ /usr/bin/kafka-console-consumer --zookeeper 192.168.33.21:2181 --topic here —from-beginning
 ---------------------------------------------------------------------
 +
 . Let’s test again with the kafka-console-producer, this time using the third node as the broker
 +
 [source, numbered]
 ---------------------------------------------------------------------
-/usr/bin/kafka-console-producer --broker-list 192.168.33.21:9092 --topic here
+$ /usr/bin/kafka-console-producer --broker-list 192.168.33.21:9092 --topic here
 ---------------------------------------------------------------------
 +
 . Let’s delete topic “here”, we now have 3 replicas
 +
 [source, numbered]
 ---------------------------------------------------------------------
-/usr/bin/kafka-topics --zookeeper 192.168.33.21:2181,192.168.33.22:2181,192.168.33.23:2181 --delete --topic here
+$ /usr/bin/kafka-topics --zookeeper 192.168.33.21:2181,192.168.33.22:2181,192.168.33.23:2181 --delete --topic here
 ---------------------------------------------------------------------
 +
 . Let’s create topic “here” again
 +
 [source, numbered]
 ---------------------------------------------------------------------
-/usr/bin/kafka-topics --create --zookeeper 192.168.33.21:2181,192.168.33.22:2181,192.168.33.23:2181 --partition 1 --replication-factor 3 --topic here
+$ /usr/bin/kafka-topics --create --zookeeper 192.168.33.21:2181,192.168.33.22:2181,192.168.33.23:2181 --partition 1 --replication-factor 3 --topic here
 ---------------------------------------------------------------------
 +
 . Let’s describe the create topic “here”; note that we can see that the replicas have changed and a leader was elected
 +
 [source, numbered]
 ---------------------------------------------------------------------
-/usr/bin/kafka-topics --describe --zookeeper 192.168.33.21:2181,192.168.33.22:2181,192.168.33.23:2181 --topic here
+$ /usr/bin/kafka-topics --describe --zookeeper 192.168.33.21:2181,192.168.33.22:2181,192.168.33.23:2181 --topic here
 ---------------------------------------------------------------------
 +
 == FAQ

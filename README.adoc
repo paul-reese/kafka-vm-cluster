@@ -435,12 +435,6 @@ $ vagrant ssh
 ---------------------------------------------------------------------
 +
 . Zookeeper and Kafka servers will start via /etc/init.d scripts and in order. You can validate startup is successful by checking logs;
-+
-[source, numbered]
----------------------------------------------------------------------
-$ cd /var/log/kafka
----------------------------------------------------------------------
-+
 .. for Zookeeper we have /var/log/kafka/zookeeper.out
 .. for Kafka Server we have /var/log/kafka/kafka-server.out
 . on “kafka-ubuntu-cluster-node-3” produce messages to “here” topic from the console;

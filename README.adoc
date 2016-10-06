@@ -24,7 +24,7 @@ $ vagrant ssh
 +
 [source, numbered]
 ---------------------------------------------------------------------
-sudo vi /etc/kafka/server.properties
+$ sudo vi /etc/kafka/server.properties
 ---------------------------------------------------------------------
 +
 . add these properties to the server.properties
@@ -42,7 +42,7 @@ advertised.host.name=192.168.33.21
 +
 [source, numbered]
 ---------------------------------------------------------------------
-sudo vi /etc/kafka/zookeeper.properties
+$ sudo vi /etc/kafka/zookeeper.properties
 ---------------------------------------------------------------------
 +
 .  Leave these as is (unless you are using another host IP address), we will update later once we have three nodes running. For quorum we need odd number of Zookeeper nodes;
@@ -59,37 +59,37 @@ server.1=192.168.33.21:2888:3888
 +
 [source, numbered]
 ---------------------------------------------------------------------
-echo “1” > /var/lib/zookeeper/myid
+$ echo “1” > /var/lib/zookeeper/myid
 ---------------------------------------------------------------------
 +
 . Restart Zookeeper server
 +
 [source, numbered]
 ---------------------------------------------------------------------
-sudo /etc/init.d/zookeeper stop
-sudo /etc/init.d/zookeeper start
+$ sudo /etc/init.d/zookeeper stop
+$ sudo /etc/init.d/zookeeper start
 ---------------------------------------------------------------------
 +
 . Restart Kafka server
 +
 [source, numbered]
 ---------------------------------------------------------------------
-sudo /etc/init.d/kafka-server stop
-sudo /etc/init.d/kafka-server start
+$ sudo /etc/init.d/kafka-server stop
+$ sudo /etc/init.d/kafka-server start
 ---------------------------------------------------------------------
 +
 . Create a new topic “here”
 +
 [source, numbered]
 ---------------------------------------------------------------------
-/usr/bin/kafka-topics --create --zookeeper 192.168.33.21:2181 --partition 1 --replication-factor 1 --topic there
+$ /usr/bin/kafka-topics --create --zookeeper 192.168.33.21:2181 --partition 1 --replication-factor 1 --topic there
 ---------------------------------------------------------------------
 +
 . Produce messages to “here” topic from the console;
 +
 [source, numbered]
 ---------------------------------------------------------------------
-/usr/bin/kafka-console-producer --broker-list 192.168.33.21:9092 --topic here
+$ /usr/bin/kafka-console-producer --broker-list 192.168.33.21:9092 --topic here
 ---------------------------------------------------------------------
 +
 . enter some text in console;
@@ -102,7 +102,12 @@ one
 ---------------------------------------------------------------------
 +
 . Consume messages from “here” topic;
-.. `/usr/bin/kafka-console-consumer --zookeeper 192.168.33.21:2181 --topic here`
++
+[source, numbered]
+---------------------------------------------------------------------
+$ /usr/bin/kafka-console-consumer --zookeeper 192.168.33.21:2181 --topic here
+---------------------------------------------------------------------
++
 . We’ve now successfully built out a single Zookeeper node and a single Kafka broker
 
 == Add Kafka Broker Node 2
@@ -114,22 +119,55 @@ one
 .. set the private IP address; you can use 192.168.33.22
 .. save and exit file
 . start up the new box and log in;
-.. `vagrant up`
-.. `vagrant ssh`
++
+[source, numbered]
+---------------------------------------------------------------------
+$ vagrant up
+
+$ vagrant ssh
+---------------------------------------------------------------------
++
 . Set Kafka server settings;
-.. `sudo vi /etc/kafka/server.properties`
-... broker.id=2
-... listeners=PLAINTEXT://192.168.33.22:9092
-... host.name=192.168.33.22
-... advertised.host.name=192.168.33.22
-.. save and exit file
++
+[source, numbered]
+---------------------------------------------------------------------
+$ sudo vi /etc/kafka/server.properties
+---------------------------------------------------------------------
++
++
+[source, numbered]
+---------------------------------------------------------------------
+broker.id=2
+listeners=PLAINTEXT://192.168.33.22:9092
+host.name=192.168.33.22
+advertised.host.name=192.168.33.22
+---------------------------------------------------------------------
++
+. save and exit file
+
 . Add a myid file to store the Kafka broker id (as set above);
-.. `echo “2” > /var/lib/zookeeper/myid`
++
+[source, numbered]
+---------------------------------------------------------------------
+$ echo “2” > /var/lib/zookeeper/myid
+---------------------------------------------------------------------
++
 . Restart Kafka server
-.. `sudo /etc/init.d/kafka-server stop`
-.. `sudo /etc/init.d/kafka-server start`
++
+[source, numbered]
+---------------------------------------------------------------------
+$ sudo /etc/init.d/kafka-server stop
+
+$ sudo /etc/init.d/kafka-server start
+---------------------------------------------------------------------
++
 . On “kafka-ubuntu-cluster-node-2” produce messages to “here” topic from the console;
-..  `/usr/bin/kafka-console-producer --broker-list 192.168.33.22:9092 --topic here`
++
+[source, numbered]
+---------------------------------------------------------------------
+$ /usr/bin/kafka-console-producer --broker-list 192.168.33.22:9092 --topic here
+---------------------------------------------------------------------
++
 .. enter some text in console;
 +
 [source, numbered]
@@ -140,7 +178,12 @@ two
 ---------------------------------------------------------------------
 +
 . On “kafka-ubuntu-cluster-node-1” consume messages from “here” topic;
-.. `/usr/bin/kafka-console-consumer --zookeeper 192.168.33.21:2181 --topic here`
++
+[source, numbered]
+---------------------------------------------------------------------
+/usr/bin/kafka-console-consumer --zookeeper 192.168.33.21:2181 --topic here
+---------------------------------------------------------------------
++
 
 == Add Kafka Broker Node 3
 . Create directory for new cluster “kafka-ubuntu-cluster-node-3”

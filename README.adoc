@@ -49,7 +49,8 @@ config.ssh.insert_key = false
 $ vagrant up --provider virtualbox
 ---------------------------------------------------------------------
 +
-. open a terminal in same directory "kafka-ubuntu-cluster-node-4"
+. open a terminal 
+. cd to directory "kafka-ubuntu-cluster-node-4"
 . ssh into vagrant box, while it is being built - password = vagrant
 +
 [source, numbered]

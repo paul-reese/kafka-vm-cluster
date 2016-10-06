@@ -91,7 +91,8 @@ sudo /etc/init.d/kafka-server start
 ---------------------------------------------------------------------
 /usr/bin/kafka-console-producer --broker-list 192.168.33.21:9092 --topic here
 ---------------------------------------------------------------------
-+.. enter some text in console;
++
+. enter some text in console;
 +
 [source, numbered]
 ---------------------------------------------------------------------

@@ -184,7 +184,8 @@ two
 ---------------------------------------------------------------------
 $ /usr/bin/kafka-console-consumer --zookeeper 192.168.33.21:2181 --topic here
 ---------------------------------------------------------------------
-+ +
++
+.
 
 == Add Kafka Broker Node 3
 . create directory for new cluster “kafka-ubuntu-cluster-node-3”

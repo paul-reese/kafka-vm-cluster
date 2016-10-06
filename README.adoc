@@ -459,35 +459,35 @@ node
 two
 ---------------------------------------------------------------------
 +
-. On “kafka-ubuntu-cluster-node-1” consume messages from “here” topic;
+. on “kafka-ubuntu-cluster-node-1” consume messages from “here” topic;
 +
 [source, numbered]
 ---------------------------------------------------------------------
 $ /usr/bin/kafka-console-consumer --zookeeper 192.168.33.21:2181 --topic here —from-beginning
 ---------------------------------------------------------------------
 +
-. Let’s test again with the kafka-console-producer, this time using the third node as the broker
+. let’s test again with the kafka-console-producer, this time using the third node as the broker
 +
 [source, numbered]
 ---------------------------------------------------------------------
 $ /usr/bin/kafka-console-producer --broker-list 192.168.33.21:9092 --topic here
 ---------------------------------------------------------------------
 +
-. Let’s delete topic “here”, we now have 3 replicas
+. let’s delete topic “here”, we now have 3 replicas
 +
 [source, numbered]
 ---------------------------------------------------------------------
 $ /usr/bin/kafka-topics --zookeeper 192.168.33.21:2181,192.168.33.22:2181,192.168.33.23:2181 --delete --topic here
 ---------------------------------------------------------------------
 +
-. Let’s create topic “here” again
+. let’s create topic “here” again
 +
 [source, numbered]
 ---------------------------------------------------------------------
 $ /usr/bin/kafka-topics --create --zookeeper 192.168.33.21:2181,192.168.33.22:2181,192.168.33.23:2181 --partition 1 --replication-factor 3 --topic here
 ---------------------------------------------------------------------
 +
-. Let’s describe the create topic “here”; note that we can see that the replicas have changed and a leader was elected
+. let’s describe the create topic “here”; note that we can see that the replicas have changed and a leader was elected
 +
 [source, numbered]
 ---------------------------------------------------------------------

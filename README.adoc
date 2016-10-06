@@ -173,13 +173,13 @@ $ vagrant init paulreese/kafka-ubuntu-cluster-node-n
 ---------------------------------------------------------------------
 +
 . edit the Vagrantfile;
-.. uncomment "config.vm.network and set the private IP address; you can use 192.168.33.21 (for node-1)
+.. uncomment "config.vm.network and set the private IP address; you can use 192.168.33.22 (for node-2)
 +
 [source, numbered]
 ---------------------------------------------------------------------
 # Create a private network, which allows host-only access to the machine
 # using a specific IP.
-config.vm.network "private_network", ip: "192.168.33.21"
+config.vm.network "private_network", ip: "192.168.33.22"
 ---------------------------------------------------------------------
 +
 .. uncomment "config.vm.provider" section and set vb.memory to 2048 (leave vb.gui commented out)
@@ -304,13 +304,13 @@ $ vagrant init paulreese/kafka-ubuntu-cluster-node-n
 ---------------------------------------------------------------------
 +
 . edit the Vagrantfile;
-.. uncomment "config.vm.network and set the private IP address; you can use 192.168.33.21 (for node-1)
+.. uncomment "config.vm.network and set the private IP address; you can use 192.168.33.23 (for node-3)
 +
 [source, numbered]
 ---------------------------------------------------------------------
 # Create a private network, which allows host-only access to the machine
 # using a specific IP.
-config.vm.network "private_network", ip: "192.168.33.21"
+config.vm.network "private_network", ip: "192.168.33.23"
 ---------------------------------------------------------------------
 +
 .. uncomment "config.vm.provider" section and set vb.memory to 2048 (leave vb.gui commented out)

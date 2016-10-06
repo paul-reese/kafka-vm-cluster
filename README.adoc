@@ -227,15 +227,15 @@ host.name=192.168.33.23
 advertised.host.name=192.168.33.23
 ---------------------------------------------------------------------
 +
-.. save and exit file
-. Add a myid file to store the Kafka broker id (as set above);
+. save and exit file
+. add a myid file to store the Kafka broker id (as set above);
 +
 [source, numbered]
 ---------------------------------------------------------------------
 $ echo “3” > /var/lib/zookeeper/myid
 ---------------------------------------------------------------------
 +
-. Restart Kafka server
+. restart Kafka server
 +
 [source, numbered]
 ---------------------------------------------------------------------
@@ -244,7 +244,7 @@ $ sudo /etc/init.d/kafka-server stop
 +
 
 $ sudo /etc/init.d/kafka-server start
-. On “kafka-ubuntu-cluster-node-3” produce messages to “here” topic from the console;
+. on “kafka-ubuntu-cluster-node-3” produce messages to “here” topic from the console;
 +
 [source, numbered]
 ---------------------------------------------------------------------

@@ -72,9 +72,7 @@ ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA6NF8iallvQVp22WDkTkyrtvp9eWW6A8YVr+kz4TjGYe7
 ---------------------------------------------------------------------
 +
 . save and exit
-
-=== Update Kafka and Zookeeper settings on VM
-. on the VM the Kafka server settings should be set. You can verify the settings;
+. on the VM, the Kafka server settings should be set. You can verify the settings;
 +
 [source, numbered]
 ---------------------------------------------------------------------

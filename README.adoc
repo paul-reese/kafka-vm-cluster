@@ -127,13 +127,14 @@ $ vagrant up
 $ vagrant ssh
 ---------------------------------------------------------------------
 +
-. Set Kafka server settings;
+. modify Kafka server.properties;
 +
 [source, numbered]
 ---------------------------------------------------------------------
 $ sudo vi /etc/kafka/server.properties
 ---------------------------------------------------------------------
 +
+. set these Kafka settings
 [source, numbered]
 ---------------------------------------------------------------------
 broker.id=2

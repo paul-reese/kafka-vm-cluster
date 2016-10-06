@@ -34,14 +34,14 @@ config.vm.provider "virtualbox" do |vb|
 end 
 ---------------------------------------------------------------------
 +
-. add config.ssh.insert_key = false, towards the end of the file (just before "end"). this is to partly handle vagrant user's SSH key
+.. add config.ssh.insert_key = false, towards the end of the file (just before "end"). this is to partly handle vagrant user's SSH key
 +
 [source, numbered]
 ---------------------------------------------------------------------
 config.ssh.insert_key = false
 ---------------------------------------------------------------------
 +
-. save and exit Vagrantfile
+.. save and exit Vagrantfile
 . start up the new box and ssh into VM;
 +
 [source, numbered]

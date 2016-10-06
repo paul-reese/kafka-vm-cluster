@@ -4,21 +4,41 @@ Some text needs to be here, I guess but this is bunk +
 == Build a Single Kafka Node VM
 . create directory for new cluster “ kafka-ubuntu-cluster-node-1”
 . change directory to “kafka-ubuntu-cluster-node-1"
-. let's spin up the vagrant box 'debian-kafka-cluster.box'
+. let's init a vagrant box 'paulreese/kafka-ubuntu-cluster-node-n'
 +
 [source, numbered]
 ---------------------------------------------------------------------
-$ vagrant init kafka-ubuntu-cluster-node-1 ~/boxes/debian-kafka-cluster.box
+$ vagrant init paulreese/kafka-ubuntu-cluster-node-n
 ---------------------------------------------------------------------
 +
 . edit the Vagrantfile;
-.. set memory to 2048
-.. set the private IP address; you can use 192.168.33.21
+.. uncomment "config.vm.network"" and set the private IP address; you can use 192.168.33.21 (for node-1)
++
+[source, numbered]
+---------------------------------------------------------------------
+# Create a private network, which allows host-only access to the machine
+# using a specific IP.
+config.vm.network "private_network", ip: "192.168.33.21"
+---------------------------------------------------------------------
++
+.. uncomment "config.vm.provider" section and set vb.memory to 2048 (leave vb.gui commented out)
++
+[source, numbered]
+---------------------------------------------------------------------
+config.vm.provider "virtualbox" do |vb|
+#   # Display the VirtualBox GUI when booting the machine
+#   vb.gui = true
+#
+#   # Customize the amount of memory on the VM:
+  vb.memory = "2048"
+end 
+---------------------------------------------------------------------
++
 . start up the new box and ssh into VM;
 +
 [source, numbered]
 ---------------------------------------------------------------------
-$ vagrant up
+$ vagrant up --provider virtualbox
 
 $ vagrant ssh
 ---------------------------------------------------------------------

@@ -647,6 +647,7 @@ Now that we have a Kafka cluster, can we expose this service to an application r
 
 == User Provided Services (CUPS)
 We can expose the Kafka cluster (broker list, zookeeper nodes and topic) to the application using create-user-provided-service.
+. let's use `cf cups` command to add the user provided service
 [source, numbered]
 ---------------------------------------------------------------------
 $ cf cups SERVICE_INSTANCE -p '{"kafka.topic":"here","kafka.broker.list":"192.168.33.21:9092,192.168.33.22:9092,192.168.33.23:9092","kafka.zookeeper.nodes.list":"192.168.33.21:2181,192.168.33.22:2181,192.168.33.23:2181"}'

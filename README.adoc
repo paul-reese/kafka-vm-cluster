@@ -636,10 +636,85 @@ $ /usr/bin/kafka-topics --create --zookeeper 192.168.33.21:2181,192.168.33.22:21
 ---------------------------------------------------------------------
 +
 . let’s describe the create topic “here”; note that we can see that the replicas have changed and a leader was elected
++
 [source, numbered]
 ---------------------------------------------------------------------
 $ /usr/bin/kafka-topics --describe --zookeeper 192.168.33.21:2181,192.168.33.22:2181,192.168.33.23:2181 --topic here
 ---------------------------------------------------------------------
+
+= Cloud Foundry
+Now that we have a Kafka cluster, can we expose this service to an application running in Cloud Foundry? If so then how?
+
+== User Provided Services (CUPS)
+We can expose the Kafka cluster (broker list, zookeeper nodes and topic) to the application using create-user-provided-service.
++
+[source, numbered]
+---------------------------------------------------------------------
+$ cf cups SERVICE_INSTANCE -p '{"kafka.topic":"here","kafka.broker.list":"192.168.33.21:9092,192.168.33.22:9092,192.168.33.23:9092","kafka.zookeeper.nodes.list":"192.168.33.21:2181,192.168.33.22:2181,192.168.33.23:2181"}'
+---------------------------------------------------------------------
++
+. we can validate the service via markeplace
++
+[source, numbered]
+---------------------------------------------------------------------
+$ cf services
+Getting services in org pcfdev-org / space pcfdev-space as admin...
+OK
+
+name                   service         plan    bound apps       last operation
+a_mysql                p-mysql         512mb   kafka-producer   create succeeded
+kafka-broker-cluster   user-provided
+---------------------------------------------------------------------
++
+. we can now bind the service to our application, change directory `cd kafka-producer`
+. push application to PCFDev
++
+[source, numbered]
+---------------------------------------------------------------------
+$ cf push
+---------------------------------------------------------------------
++
+. let's bind the applicaiton to kafka-broker-cluster, binding will require cf restage kafka-producer
++
+[source, numbered]
+---------------------------------------------------------------------
+$ cf bind-service kafka-producer kafka-broker-cluster
+
+$ cf restage kafka-producer
+---------------------------------------------------------------------
++
+. the *_kafka-producer_* application has actuator enabled so let's hit the /env endpoint. there's also a @RestController attached to the application so we can hit the "/" endpoint
+here we can see that the brokerList, zkNodes and topic properties in the application have been resolved from the user provided service
++
+[source, numbered]
+---------------------------------------------------------------------
+$ curl kafka-producer-crutchlike-shovelboard.local2.pcfdev.io/
+
+KafkaServiceInstance{topic='here', brokerList='192.168.33.21,192.168.33.22,192.168.33.23', zookeeperNodes='192.168.33.21,192.168.33.22,192.168.33.23'} 
+---------------------------------------------------------------------
++
+. on one of the Kafka nodes, `vagrant ssh`
+. check the *_here_* topic for messages coming from kafka-producer
++
+[source, numbered]
+---------------------------------------------------------------------
+$ /var/log/kafka$ /usr/bin/kafka-console-consumer --zookeeper 192.168.33.21:2181,192.168.33.22:2181,192.168.33.23:2181 --topic here
+?
+ contentType
+            "text/plain"Hello World1475871240398
+?
+ contentType
+            "text/plain"Hello World1475871241400
+?
+ contentType
+            "text/plain"Hello World1475871242400
+?
+ contentType
+            "text/plain"Hello World1475871243401
+---------------------------------------------------------------------
++ 
+. ctrl-c to exit shell script, notice the number of messages processed
+
 = FAQ
 == Configured broker.id 3 doesn't match stored broker.id 1 in meta.properties
 [source, numbered]

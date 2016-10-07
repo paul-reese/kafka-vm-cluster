@@ -1,1 +1,3 @@
+io/pivotal/KafkaController.class
+io/pivotal/cloud/service/KafkaServiceInstance.class
 io/pivotal/KafkaProducerApplication.class

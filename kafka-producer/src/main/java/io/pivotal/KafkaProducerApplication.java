@@ -10,12 +10,12 @@ import org.springframework.integration.annotation.InboundChannelAdapter;
 @EnableBinding(Source.class)
 public class KafkaProducerApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(KafkaProducerApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(KafkaProducerApplication.class, args);
+    }
 
     @InboundChannelAdapter(Source.OUTPUT)
     public String greet() {
-        return "hello world " + System.currentTimeMillis();
+        return "Hello World" + System.currentTimeMillis();
     }
 }

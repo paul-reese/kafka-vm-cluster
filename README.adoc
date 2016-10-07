@@ -646,7 +646,7 @@ $ /usr/bin/kafka-topics --describe --zookeeper 192.168.33.21:2181,192.168.33.22:
 Now that we have a Kafka cluster, can we expose this service to an application running in Cloud Foundry? If so then how?
 
 == User Provided Services (CUPS)
-We can expose the Kafka cluster (broker list, zookeeper nodes and topic) to the application using create-user-provided-service.
+We can expose the Kafka cluster (broker list, zookeeper nodes and topic) to the application using create-user-provided-service. +
 . let's use `cf cups` command to add the user provided service
 [source, numbered]
 ---------------------------------------------------------------------

@@ -26,8 +26,8 @@
       <file leaf-file-name="KafkaProducerApplication.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/io/pivotal/KafkaProducerApplication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.38543898">
-              <caret line="16" column="21" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
+            <state vertical-scroll-proportion="0.32119915">
+              <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
               <folding>
                 <element signature="e#475#476#0" expanded="true" />
                 <element signature="e#550#551#0" expanded="true" />
@@ -725,12 +725,12 @@
       <workItem from="1473697026712" duration="8000" />
       <workItem from="1475521858231" duration="3164000" />
       <workItem from="1475627010238" duration="3411000" />
-      <workItem from="1475782204992" duration="30922000" />
+      <workItem from="1475782204992" duration="31112000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37648000" />
+    <option name="totallyTimeSpent" value="37838000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1787" y="-198" width="1484" height="951" extended-state="0" />
@@ -919,8 +919,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/io/pivotal/KafkaProducerApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.38543898">
-          <caret line="16" column="21" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
+        <state vertical-scroll-proportion="0.32119915">
+          <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
           <folding>
             <element signature="e#475#476#0" expanded="true" />
             <element signature="e#550#551#0" expanded="true" />

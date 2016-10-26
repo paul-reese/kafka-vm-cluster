@@ -1,0 +1,166 @@
+2016/10/26-10:10:10.965353 120bd9000 RocksDB version: 4.8.0
+2016/10/26-10:10:10.965375 120bd9000 Git sha rocksdb_build_git_sha:0645e8b42cbf34ce5ac4e583c80c668e5ca56756
+2016/10/26-10:10:10.965377 120bd9000 Compile date Jul 20 2016
+2016/10/26-10:10:10.965378 120bd9000 DB SUMMARY
+2016/10/26-10:10:10.965414 120bd9000 SST files in /Users/phopper/Documents/pivotal/workspace/kafka-vm-cluster/kafka-stream-application/user-region-lambda-example/1_0/rocksdb/CountsByRegion dir, Total Num: 0, files: 
+2016/10/26-10:10:10.965416 120bd9000 Write Ahead Log file in /Users/phopper/Documents/pivotal/workspace/kafka-vm-cluster/kafka-stream-application/user-region-lambda-example/1_0/rocksdb/CountsByRegion: 
+2016/10/26-10:10:10.965417 120bd9000          Options.error_if_exists: 0
+2016/10/26-10:10:10.965419 120bd9000        Options.create_if_missing: 1
+2016/10/26-10:10:10.965420 120bd9000          Options.paranoid_checks: 1
+2016/10/26-10:10:10.965421 120bd9000                      Options.env: 0x121362208
+2016/10/26-10:10:10.965422 120bd9000                 Options.info_log: 0x7fc641e80370
+2016/10/26-10:10:10.965423 120bd9000           Options.max_open_files: -1
+2016/10/26-10:10:10.965424 120bd9000 Options.max_file_opening_threads: 16
+2016/10/26-10:10:10.965424 120bd9000       Options.max_total_wal_size: 0
+2016/10/26-10:10:10.965425 120bd9000        Options.disableDataSync: 0
+2016/10/26-10:10:10.965426 120bd9000              Options.use_fsync: 0
+2016/10/26-10:10:10.965427 120bd9000      Options.max_log_file_size: 0
+2016/10/26-10:10:10.965428 120bd9000 Options.max_manifest_file_size: 18446744073709551615
+2016/10/26-10:10:10.965429 120bd9000      Options.log_file_time_to_roll: 0
+2016/10/26-10:10:10.965430 120bd9000      Options.keep_log_file_num: 1000
+2016/10/26-10:10:10.965431 120bd9000   Options.recycle_log_file_num: 0
+2016/10/26-10:10:10.965432 120bd9000        Options.allow_os_buffer: 1
+2016/10/26-10:10:10.965433 120bd9000       Options.allow_mmap_reads: 0
+2016/10/26-10:10:10.965433 120bd9000       Options.allow_fallocate: 1
+2016/10/26-10:10:10.965434 120bd9000      Options.allow_mmap_writes: 0
+2016/10/26-10:10:10.965435 120bd9000          Options.create_missing_column_families: 0
+2016/10/26-10:10:10.965436 120bd9000                              Options.db_log_dir: 
+2016/10/26-10:10:10.965437 120bd9000                                 Options.wal_dir: /Users/phopper/Documents/pivotal/workspace/kafka-vm-cluster/kafka-stream-application/user-region-lambda-example/1_0/rocksdb/CountsByRegion
+2016/10/26-10:10:10.965438 120bd9000                Options.table_cache_numshardbits: 6
+2016/10/26-10:10:10.965439 120bd9000     Options.delete_obsolete_files_period_micros: 21600000000
+2016/10/26-10:10:10.965440 120bd9000              Options.base_background_compactions: 1
+2016/10/26-10:10:10.965441 120bd9000              Options.max_background_compactions: 1
+2016/10/26-10:10:10.965442 120bd9000                      Options.max_subcompactions: 1
+2016/10/26-10:10:10.965443 120bd9000                  Options.max_background_flushes: 1
+2016/10/26-10:10:10.965443 120bd9000                         Options.WAL_ttl_seconds: 0
+2016/10/26-10:10:10.965444 120bd9000                       Options.WAL_size_limit_MB: 0
+2016/10/26-10:10:10.965445 120bd9000             Options.manifest_preallocation_size: 4194304
+2016/10/26-10:10:10.965446 120bd9000                          Options.allow_os_buffer: 1
+2016/10/26-10:10:10.965447 120bd9000                         Options.allow_mmap_reads: 0
+2016/10/26-10:10:10.965448 120bd9000                        Options.allow_mmap_writes: 0
+2016/10/26-10:10:10.965449 120bd9000                      Options.is_fd_close_on_exec: 1
+2016/10/26-10:10:10.965450 120bd9000                    Options.stats_dump_period_sec: 600
+2016/10/26-10:10:10.965450 120bd9000                    Options.advise_random_on_open: 1
+2016/10/26-10:10:10.965451 120bd9000                     Options.db_write_buffer_size: 0d
+2016/10/26-10:10:10.965452 120bd9000          Options.access_hint_on_compaction_start: NORMAL
+2016/10/26-10:10:10.965453 120bd9000   Options.new_table_reader_for_compaction_inputs: 0
+2016/10/26-10:10:10.965454 120bd9000                Options.compaction_readahead_size: 0d
+2016/10/26-10:10:10.965463 120bd9000                Options.random_access_max_buffer_size: 1048576d
+2016/10/26-10:10:10.965464 120bd9000               Options.writable_file_max_buffer_size: 1048576d
+2016/10/26-10:10:10.965465 120bd9000                       Options.use_adaptive_mutex: 0
+2016/10/26-10:10:10.965466 120bd9000                             Options.rate_limiter: 0x0
+2016/10/26-10:10:10.965467 120bd9000      Options.sst_file_manager.rate_bytes_per_sec: 0
+2016/10/26-10:10:10.965467 120bd9000                           Options.bytes_per_sync: 0
+2016/10/26-10:10:10.965468 120bd9000                       Options.wal_bytes_per_sync: 0
+2016/10/26-10:10:10.965469 120bd9000                        Options.wal_recovery_mode: 2
+2016/10/26-10:10:10.965470 120bd9000                   Options.enable_thread_tracking: 0
+2016/10/26-10:10:10.965471 120bd9000          Options.allow_concurrent_memtable_write: 0
+2016/10/26-10:10:10.965472 120bd9000       Options.enable_write_thread_adaptive_yield: 0
+2016/10/26-10:10:10.965473 120bd9000              Options.write_thread_max_yield_usec: 100
+2016/10/26-10:10:10.965474 120bd9000             Options.write_thread_slow_yield_usec: 3
+2016/10/26-10:10:10.965475 120bd9000                                Options.row_cache: None
+2016/10/26-10:10:10.965475 120bd9000        Options.wal_filter: None
+2016/10/26-10:10:10.965477 120bd9000 Compression algorithms supported:
+2016/10/26-10:10:10.965478 120bd9000 	Snappy supported: 1
+2016/10/26-10:10:10.965479 120bd9000 	Zlib supported: 1
+2016/10/26-10:10:10.965479 120bd9000 	Bzip supported: 1
+2016/10/26-10:10:10.965480 120bd9000 	LZ4 supported: 1
+2016/10/26-10:10:10.965481 120bd9000 Fast CRC32 supported: 0
+2016/10/26-10:10:10.965632 120bd9000 Creating manifest 1 
+2016/10/26-10:10:10.968472 120bd9000 Recovering from manifest file: MANIFEST-000001
+2016/10/26-10:10:10.968510 120bd9000 --------------- Options for column family [default]:
+2016/10/26-10:10:10.968512 120bd9000               Options.comparator: rocksdb.InternalKeyComparator:leveldb.BytewiseComparator
+2016/10/26-10:10:10.968514 120bd9000           Options.merge_operator: None
+2016/10/26-10:10:10.968515 120bd9000        Options.compaction_filter: None
+2016/10/26-10:10:10.968516 120bd9000        Options.compaction_filter_factory: None
+2016/10/26-10:10:10.968517 120bd9000         Options.memtable_factory: SkipListFactory
+2016/10/26-10:10:10.968518 120bd9000            Options.table_factory: BlockBasedTable
+2016/10/26-10:10:10.968528 120bd9000            table_factory options:   flush_block_policy_factory: FlushBlockBySizePolicyFactory (0x7fc643a8b3b0)
+  cache_index_and_filter_blocks: 0
+  pin_l0_filter_and_index_blocks_in_cache: 0
+  index_type: 0
+  hash_index_allow_collision: 1
+  checksum: 1
+  no_block_cache: 0
+  block_cache: 0x7fc643a8db08
+  block_cache_size: 104857600
+  block_cache_compressed: 0x0
+  block_size: 4096
+  block_size_deviation: 10
+  block_restart_interval: 16
+  index_block_restart_interval: 1
+  filter_policy: nullptr
+  whole_key_filtering: 1
+  skip_table_builder_flush: 0
+  format_version: 0
+2016/10/26-10:10:10.968529 120bd9000        Options.write_buffer_size: 33554432
+2016/10/26-10:10:10.968530 120bd9000  Options.max_write_buffer_number: 3
+2016/10/26-10:10:10.968531 120bd9000          Options.compression: NoCompression
+2016/10/26-10:10:10.968533 120bd9000       Options.prefix_extractor: nullptr
+2016/10/26-10:10:10.968534 120bd9000             Options.num_levels: 7
+2016/10/26-10:10:10.968535 120bd9000        Options.min_write_buffer_number_to_merge: 1
+2016/10/26-10:10:10.968536 120bd9000     Options.max_write_buffer_number_to_maintain: 0
+2016/10/26-10:10:10.968537 120bd9000            Options.compression_opts.window_bits: -14
+2016/10/26-10:10:10.968538 120bd9000                  Options.compression_opts.level: -1
+2016/10/26-10:10:10.968539 120bd9000               Options.compression_opts.strategy: 0
+2016/10/26-10:10:10.968540 120bd9000         Options.compression_opts.max_dict_bytes: 0
+2016/10/26-10:10:10.968541 120bd9000      Options.level0_file_num_compaction_trigger: 4
+2016/10/26-10:10:10.968554 120bd9000          Options.level0_slowdown_writes_trigger: 20
+2016/10/26-10:10:10.968555 120bd9000              Options.level0_stop_writes_trigger: 24
+2016/10/26-10:10:10.968556 120bd9000                   Options.target_file_size_base: 67108864
+2016/10/26-10:10:10.968557 120bd9000             Options.target_file_size_multiplier: 1
+2016/10/26-10:10:10.968558 120bd9000                Options.max_bytes_for_level_base: 268435456
+2016/10/26-10:10:10.968559 120bd9000 Options.level_compaction_dynamic_level_bytes: 0
+2016/10/26-10:10:10.968561 120bd9000          Options.max_bytes_for_level_multiplier: 10
+2016/10/26-10:10:10.968562 120bd9000 Options.max_bytes_for_level_multiplier_addtl[0]: 1
+2016/10/26-10:10:10.968563 120bd9000 Options.max_bytes_for_level_multiplier_addtl[1]: 1
+2016/10/26-10:10:10.968564 120bd9000 Options.max_bytes_for_level_multiplier_addtl[2]: 1
+2016/10/26-10:10:10.968565 120bd9000 Options.max_bytes_for_level_multiplier_addtl[3]: 1
+2016/10/26-10:10:10.968566 120bd9000 Options.max_bytes_for_level_multiplier_addtl[4]: 1
+2016/10/26-10:10:10.968567 120bd9000 Options.max_bytes_for_level_multiplier_addtl[5]: 1
+2016/10/26-10:10:10.968568 120bd9000 Options.max_bytes_for_level_multiplier_addtl[6]: 1
+2016/10/26-10:10:10.968569 120bd9000       Options.max_sequential_skip_in_iterations: 8
+2016/10/26-10:10:10.968570 120bd9000              Options.expanded_compaction_factor: 25
+2016/10/26-10:10:10.968571 120bd9000                Options.source_compaction_factor: 1
+2016/10/26-10:10:10.968572 120bd9000          Options.max_grandparent_overlap_factor: 10
+2016/10/26-10:10:10.968573 120bd9000                        Options.arena_block_size: 4194304
+2016/10/26-10:10:10.968574 120bd9000   Options.soft_pending_compaction_bytes_limit: 68719476736
+2016/10/26-10:10:10.968575 120bd9000   Options.hard_pending_compaction_bytes_limit: 274877906944
+2016/10/26-10:10:10.968576 120bd9000       Options.rate_limit_delay_max_milliseconds: 1000
+2016/10/26-10:10:10.968578 120bd9000                Options.disable_auto_compactions: 0
+2016/10/26-10:10:10.968579 120bd9000                           Options.filter_deletes: 0
+2016/10/26-10:10:10.968580 120bd9000           Options.verify_checksums_in_compaction: 1
+2016/10/26-10:10:10.968581 120bd9000                         Options.compaction_style: 1
+2016/10/26-10:10:10.968582 120bd9000                           Options.compaction_pri: 0
+2016/10/26-10:10:10.968583 120bd9000  Options.compaction_options_universal.size_ratio: 1
+2016/10/26-10:10:10.968584 120bd9000 Options.compaction_options_universal.min_merge_width: 2
+2016/10/26-10:10:10.968585 120bd9000 Options.compaction_options_universal.max_merge_width: 4294967295
+2016/10/26-10:10:10.968586 120bd9000 Options.compaction_options_universal.max_size_amplification_percent: 200
+2016/10/26-10:10:10.968587 120bd9000 Options.compaction_options_universal.compression_size_percent: -1
+2016/10/26-10:10:10.968588 120bd9000 Options.compaction_options_fifo.max_table_files_size: 1073741824
+2016/10/26-10:10:10.968589 120bd9000                   Options.table_properties_collectors: 
+2016/10/26-10:10:10.968590 120bd9000                   Options.inplace_update_support: 0
+2016/10/26-10:10:10.968591 120bd9000                 Options.inplace_update_num_locks: 10000
+2016/10/26-10:10:10.968592 120bd9000               Options.min_partial_merge_operands: 2
+2016/10/26-10:10:10.968593 120bd9000               Options.memtable_prefix_bloom_bits: 0
+2016/10/26-10:10:10.968594 120bd9000             Options.memtable_prefix_bloom_probes: 6
+2016/10/26-10:10:10.968595 120bd9000   Options.memtable_prefix_bloom_huge_page_tlb_size: 0
+2016/10/26-10:10:10.968596 120bd9000                           Options.bloom_locality: 0
+2016/10/26-10:10:10.968597 120bd9000                    Options.max_successive_merges: 0
+2016/10/26-10:10:10.968598 120bd9000                Options.optimize_filters_for_hits: 0
+2016/10/26-10:10:10.968599 120bd9000                Options.paranoid_file_checks: 0
+2016/10/26-10:10:10.968600 120bd9000                Options.report_bg_io_stats: 0
+2016/10/26-10:10:10.969112 120bd9000 Recovered from manifest file:/Users/phopper/Documents/pivotal/workspace/kafka-vm-cluster/kafka-stream-application/user-region-lambda-example/1_0/rocksdb/CountsByRegion/MANIFEST-000001 succeeded,manifest_file_number is 1, next_file_number is 3, last_sequence is 0, log_number is 0,prev_log_number is 0,max_column_family is 0
+2016/10/26-10:10:10.969117 120bd9000 Column family [default] (ID 0), log number is 0
+2016/10/26-10:10:10.970304 120bd9000 DB pointer 0x7fc64594be00
+2016/10/26-10:10:40.313367 11e12e000 (Original Log Time 2016/10/26-10:10:40.313360) Calling FlushMemTableToOutputFile with column family [default], flush slots available 1, compaction slots allowed 1, compaction slots scheduled 1
+2016/10/26-10:10:40.313383 11e12e000 [default] [JOB 2] Flushing memtable with next log file: 3
+2016/10/26-10:10:40.313398 11e12e000 EVENT_LOG_v1 {"time_micros": 1477498240313390, "job": 2, "event": "flush_started", "num_memtables": 1, "num_entries": 47, "num_deletes": 0, "memory_usage": 1912}
+2016/10/26-10:10:40.313400 11e12e000 [default] [JOB 2] Level-0 flush table #6: started
+2016/10/26-10:10:40.313762 11e12e000 EVENT_LOG_v1 {"time_micros": 1477498240313754, "cf_name": "default", "job": 2, "event": "table_file_creation", "file_number": 6, "file_size": 983, "table_properties": {"data_size": 200, "index_size": 36, "filter_size": 0, "raw_key_size": 106, "raw_average_key_size": 13, "raw_value_size": 64, "raw_average_value_size": 8, "num_data_blocks": 1, "num_entries": 8, "filter_policy_name": "", "kDeletedKeys": "0"}}
+2016/10/26-10:10:40.313770 11e12e000 [default] [JOB 2] Level-0 flush table #6: 983 bytes OK
+2016/10/26-10:10:40.313784 11e12e000 Creating manifest 7
+2016/10/26-10:10:40.314352 11e12e000 (Original Log Time 2016/10/26-10:10:40.313777) [default] Level-0 commit table #6 started
+2016/10/26-10:10:40.314354 11e12e000 (Original Log Time 2016/10/26-10:10:40.314331) [default] Level-0 commit table #6: memtable #1 done
+2016/10/26-10:10:40.314355 11e12e000 (Original Log Time 2016/10/26-10:10:40.314337) EVENT_LOG_v1 {"time_micros": 1477498240314333, "job": 2, "event": "flush_finished", "lsm_state": [1, 0, 0, 0, 0, 0, 0]}
+2016/10/26-10:10:40.314356 11e12e000 (Original Log Time 2016/10/26-10:10:40.314345) [default] Level summary: files[1 0 0 0 0 0 0] max score 0.25
